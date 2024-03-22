@@ -1,0 +1,45 @@
+/* Style for form container */
+.form-container {
+  max-width: 500px; /* Adjust max-width as needed */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for labels */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Style for text area */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Style for file input */
+input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Style for submit button */
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue color, adjust as needed */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for submit button */
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
