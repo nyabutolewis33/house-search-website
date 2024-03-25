@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset("House_Hunting\House_hunting/Home_Property/css/jquery.fancybox.css")}}" type="text/css" media="screen" /> 
     <!-- Theme color -->
     <link id="switcher" href="{{ asset("House_Hunting\House_hunting/Home_Property/css/theme-color/default-theme.css")}}" rel="stylesheet"> 
-    <link href="{{ asset("House_Hunting\House_hunting/Home_Property/css/dashboard.css")}}" rel="stylesheet">    
+    <link href="{{ asset("House_Hunting\House_hunting/Home_Property/css/theme-color/dashboard.css")}}" rel="stylesheet">    
 
     <!-- Main style sheet -->
     <link href="{{ asset("House_Hunting\House_hunting/Home_Property/css/style.css")}}" rel="stylesheet">     
@@ -43,36 +43,95 @@
   
     </head>
 <body class="aa-price-range">
-    <header>
-        <!-- LOGO -->                                               
-        <!-- Text based logo -->
-        <!--<a class="navbar-brand aa-logo" href="index.blade.php"> Home <span>Property</span></a> -->
-        <!-- Image based logo -->
-        <a class="navbar-brand dash-logo-img" href="dashboard.blade.php" style="margin-top: 2px"><img src="{{("House_Hunting\House_hunting/Home_Property/img/logo.png")}}" alt="logo"></a>
-    </header>
-    </section>
-    <section id="welcome-ss" align='right' style="margin-top: 10px">
+<header id="aa-header">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-header-area">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="aa-header-left">
+                  <div class="aa-telephone-no">
+                    <span class="fa fa-phone"></span>
+                    +254 - 797 - 920 - 404
+                  </div>
+                  <div class="aa-email hidden-xs">
+                    <span class="fa fa-envelope-o"></span> info@housequest.com
+                  </div>
+                </div>              
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="aa-header-right">
+                  <a href="index" class="aa-register">Home</a>
+                  <!--<a href="signin" class="aa-login">Login</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End header section -->
     
-        <!-- User icon, name, email, and logout button -->
+    </section>
+    <section id="aa-menu-area">
+    <nav class="navbar navbar-default main-navbar" role="navigation">  
+      <div class="container">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- LOGO -->                                               
+          <!-- Text based logo -->
+           <a class="navbar-brand aa-logo" href="index.blade.php"> House <span>Quest</span></a>
+           <!-- Image based logo -->
+           <!--<a class="navbar-brand aa-logo-img" href="index.blade.php"><img src="{{("House_Hunting\House_hunting/Home_Property/img/logo.png")}}" alt="logo"></a>-->
+        </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <!-- Button to navigate to image upload page -->
-                <li style="background-color: #ff0000; margin-right: 20px"><a href="upload">Upload Images</a></li>
+                <li style="background-color: #007bff; margin-right: 20px"><a href="upload">Upload House</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #ff0000;">{{ $userName }}
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #007bff;">{{ $userName }}
                         <i class="fa fa-user-circle-o" aria-hidden="true"></i> <!-- Human-like head icon -->
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu" style="background-color: #ff0000;">
-                        <li><a href="#" style="background-color: #ff0000;">{{ $userEmail }}</a></li> <!-- Display user's email -->
+                    <ul class="dropdown-menu" style="background-color: #007bff;">
+                        <li><a href="#" style="background-color: #007bff;">{{ $userEmail }}</a></li> <!-- Display user's email -->
                         <li role="separator" class="divider"></li>
-                        <li><a href="#" style="background-color: #ff0000;">Logout</a></li> <!-- Logout option -->
+                        <li><a href="#" style="background-color: #007bff;">Logout</a></li> <!-- Logout option -->
                     </ul>
                 </li>
             </ul>
-        </div><!--/.nav-collapse -->
-        
-    </section>
+        </div><!--/.nav-collapse -->    
+      </div>          
+    </nav> 
+  </section>
+  <!-- End menu section -->
+  <section id="aa-image-display-area">
+    @if (!empty($imageData))
+        <div>
+            <h2>Your Uploaded Images:</h2>
+            @foreach ($imageData as $image)
+                <div class="image-card">
+                    <img src="{{ asset($image['path']) }}" alt="{{ $image['title'] }}">
+                    <div class="image-details">
+                        <p>Title: <strong>{{ $image['title'] }}</strong></p>
+                        <p class="image-description">Description: {{ $image['description'] }}</p>
+                        <p class="image-time">Posted at: {{ $image['posted_at'] }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    @else
+        <p>No images uploaded yet.</p>
+    @endif
+</section>
 
 
 <!-- jQuery library -->

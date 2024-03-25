@@ -15,8 +15,8 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // Define user_id as an unsigned big integer
-            $table->foreign('user_id')->references('id')->on('user_details')->onDelete('cascade'); // Add foreign key constraint
+            $table->unsignedBigInteger('user_id'); // Define user_id as an unsigned big integer 
+            $table->foreign('user_id')->references('id')->on('user_details')->onDelete('cascade');// Add foreign key constraint
             $table->string('title');
             $table->text('description');
             $table->string('path'); // Store file path

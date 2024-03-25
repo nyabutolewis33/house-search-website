@@ -43,3 +43,47 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
+#welcome-ss #navbar .dropdown{
+  margin-right: 30px;
+}
+
+#welcome-ss #navbar .dropdown .dropdown-toggle .dropdown-menu:hover{
+  background-color: #ccc;
+}
+.alert-success{
+  background-color: green;
+  color: black;
+  height: 30px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+#aa-image-display-area .image-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 2%;
+}
+#aa-image-display-area .image-card img {
+  max-width: 100%;
+  height: auto;
+}
+#aa-image-display-area .image-details {
+  font-weight: bold;
+}
+#aa-image-display-area.image-description {
+  margin-top: 5px;
+  color: #666;
+}
+#aa-image-display-area .image-time {
+  font-style: italic;
+  color: #999;
+  margin-top: 5px;
+}
+#aa-image-display-area p {
+  text-align: center;
+  top: 50%;
+}

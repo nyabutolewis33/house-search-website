@@ -7,7 +7,10 @@
     <link href="{{ asset("House_Hunting\House_hunting/Home_Property/css/theme-color/dashboard.css")}}" rel="stylesheet">
 </head>
 <body>
-<form action="{{ route('upload.store') }}" method="POST" enctype="multipart/form-data" class="form-container">
+    @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+<form action="{{ route('upload.store')}}" method="POST" enctype="multipart/form-data" class="form-container">
     @csrf
     <div>
         <label for="title">Title</Title>:</label>
@@ -19,11 +22,27 @@
     </div>
     <div>
         <label for="images">Upload Images:</label>
-        <input type="file" name="images[]" id="images" multiple>
+        <input type="file" name="images[]" id="images" multiple onchange="updateImageList()">
+        <ul id="imageList"></ul>
     </div>
     <button type="submit">Upload</button>
 </form>
 
+<script>
+    function updateImageList() {
+        var input = document.getElementById('images');
+        var ul = document.getElementById('imageList');
+        
+        for (var i = 0; i < input.files.length; i++) {
+            var li = document.createElement('li');
+            li.textContent = input.files[i].name;
+            ul.appendChild(li);
+        }
+    }
+    window.onload = function() {
+        updateImageList();
+    };
+</script>
 </body>
 </html>
 

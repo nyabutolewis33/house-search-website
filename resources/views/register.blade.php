@@ -46,10 +46,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="aa-signin-area">
-            <div class="aa-signin-form">
-              <div class="aa-signin-form-title">
-                <a class="aa-property-home" href="index.html">Property Home</a>
-                <h4>Create your account and Stay with us</h4>
+            <div class="aa-signup-form">
+              <div class="aa-signup-form-title">
+                <h4>Create your account and Advertise with us</h4>
               </div>
               <form class="contactform" method="POST" action="register-user"> 
               @csrf                                                
@@ -95,9 +94,14 @@
                 </div>
                 <div class="aa-single-submit">
                   <input type="submit" value="Create Account" name="submit"> 
-                  <p>Already have an Account? <a href="signin">Signin!</a></p>                   
+                  <p>Already have an Account? <a href="signin">Signin!</a></p> 
+                </div>                  
               </form>
             </div>
+          </div>
+          <div class="aa-logo-container">
+            <img src="{{("House_Hunting\House_hunting/Home_Property/img/apple-touch-icon.png")}}" alt="logo">
+            <a class="aa-logo" href="index.blade.php"> House <span>Quest</span></a>
           </div>
         </div>
       </div>

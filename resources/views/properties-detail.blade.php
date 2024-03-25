@@ -427,3 +427,69 @@
 
   </body>
 </html>
+
+
+public function loginuser(Request $request)
+{
+    $request->only(['email', 'password']);
+
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|min:8',
+    ]);   
+    
+    
+    // Attempt to authenticate the user
+     // Retrieve user by email
+     $user = UserDetail::where('email', $request->email)->first();
+
+     if ($user) {
+         // Verify password
+         if (Hash::check($request->password, $user->password)) {
+             // Authentication successful
+             $userName = $user->name;
+             $userEmail = $user->email;
+ 
+             // Pass user data to the view
+             return view('dashboard', [
+                 'userName' => $userName,
+                 'userEmail' => $userEmail
+             ]);}
+    } else {
+        // Authentication failed
+        return back()->withErrors(['email' => 'Invalid email or password.']);
+    }
+}
+
+Route::get('/upload', [RegisterController::class, 'showuploadForm'])->name('upload.form');
+
+Route::get('/upload', [UploadController::class, 'create'])->name('upload');
+Route::post('/upload', [UploadController::class, 'create']);
+
+
+$allImagePaths = [];
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $imageSet) {
+                $imagePaths = [];
+
+                foreach ($imageSet as $image) {
+                    $imageName = time() . '_' . $image->getClientOriginalName();
+                    $image->storeAs('public/images', $imageName); // Store image in storage
+                    $imagePaths[] = 'storage/images/' . $imageName;
+                }
+
+                $allImagePaths[] = $imagePaths;
+            }
+        }
+        // Save all image paths to the database
+        foreach ($allImagePaths as $imagePaths) {
+            Image::create([
+                'user_id' => $user_id,
+                'title' => $title,
+                'description' => $description,
+                'path' => json_encode($imagePaths) // Store paths as JSON array or serialize as needed
+            ]);
+            return redirect()->back()->with('success', 'Images uploaded successfully.');
+        }
+    }

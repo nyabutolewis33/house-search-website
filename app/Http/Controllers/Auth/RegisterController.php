@@ -40,38 +40,30 @@ class RegisterController extends Controller
     
     }
 
+
     public function loginuser(Request $request)
 {
-    $request->only(['email', 'password']);
+    $credentials = $request->only('email', 'password');
 
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required|min:8',
-    ]);   
+    if (Auth::attempt($credentials)) {
+        // Authentication successful
+        // Retrieve the authenticated user
+        $user = Auth::user();
+        
+        // Extract user information
+        $userName = $user->name; // Assuming your user model has a 'name' attribute
+        $userEmail = $user->email;
     
-    
-    // Attempt to authenticate the user
-     // Retrieve user by email
-     $user = UserDetail::where('email', $request->email)->first();
-
-     if ($user) {
-         // Verify password
-         if (Hash::check($request->password, $user->password)) {
-             // Authentication successful
-             $userName = $user->name;
-             $userEmail = $user->email;
- 
-             // Pass user data to the view
-             return view('dashboard', [
-                 'userName' => $userName,
-                 'userEmail' => $userEmail
-             ]);}
+        // Pass the user information to the dashboard view
+        return view('dashboard', [
+            'userName' => $userName,
+            'userEmail' => $userEmail
+        ]);
     } else {
         // Authentication failed
         return back()->withErrors(['email' => 'Invalid email or password.']);
     }
 }
-
 
 
 
@@ -85,39 +77,10 @@ class RegisterController extends Controller
         return view('index');
     }
 
-    public function showProperties()
-    {
-        return view('properties');
-    }
-
-    public function showGallery()
-    {
-        return view('gallery');
-    }
-
-    public function showProperties_detail()
-    {
-        return view('properties-detail');
-    }
 
     public function showContact()
     {
         return view('contact');
-    }
-
-    public function showBlog_single()
-    {
-        return view('blog-single');
-    }
-
-    public function showBlog_archive()
-    {
-        return view('blog-archive');
-    }
-
-    public function show404()
-    {
-        return view('404');
     }
 
     public function showDashboard()

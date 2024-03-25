@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 
-class UserDetail extends Model
+class UserDetail extends Model implements AuthenticatableContract
 {
-    use HasFactory;
+    use Authenticatable;
 
     protected $table = 'user_details';
 
@@ -20,4 +21,5 @@ class UserDetail extends Model
     ];
 
     // You can define relationships with other models here if needed
+    
 }
