@@ -204,16 +204,23 @@
         <div class="aa-latest-properties-content">
           <div class="row">
             <div class="image-container">
-              @foreach ($images as $image)
-                <div class="image-card">
-                    <img src="{{ asset($image->path) }}" alt="{{ $image->title }}">
-                    <div class="image-details">
-                        <p>Title: <strong>{{ $image->title }}</strong></p>
-                        <p class="image-description">Description: {{ $image->description }}</p>
-                        <p class="image-time">Posted at: {{ $image->created_at }}</p>
+                @if (!empty($imageData))
+                    <div>
+                        <h2>Your Uploaded Images:</h2>
+                        @foreach ($imageData as $image)
+                            <div class="image-card">
+                                <img src="{{ asset($image['path']) }}" alt="{{ $image['title'] }}">
+                                <div class="image-details">
+                                    <p>Title: <strong>{{ $image['title'] }}</strong></p>
+                                    <p class="image-description">Description: {{ $image['description'] }}</p>
+                                    <p class="image-time">Posted at: {{ $image['posted_at'] }}</p>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                </div>
-              @endforeach
+                @else
+                    <p>No images uploaded yet.</p>
+                @endif
             </div>
             
             

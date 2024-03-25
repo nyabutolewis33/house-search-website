@@ -33,8 +33,19 @@ class RetrieveController extends Controller
     {
         // Retrieve all images in random order
         $images = Image::inRandomOrder()->get();
-        dd($images);
+        
+        $imageData = [];
 
-        return view('index', ['images' => $images]);
+        foreach ($images as $image) {
+            $imageData[] = [
+                'path' => json_decode($image->path, true),
+                'title' => $image->title,
+                'description' => $image->description,
+                'posted_at' => $image->created_at->format('Y-m-d H:i:s'),
+            ];
+        }
+
+        dd($imageData);
+        return view('index', ['imageData' => $imageData]);
     }
 }
