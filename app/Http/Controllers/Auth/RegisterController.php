@@ -93,5 +93,10 @@ class RegisterController extends Controller
         return view('upload');
     }
 
+    public function showAbout()
+    {
+        return view('about');
+    }
+
 }
 

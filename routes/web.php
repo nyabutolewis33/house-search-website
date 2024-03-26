@@ -37,6 +37,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 
 Route::get('/index', [RegisterController::class, 'showIndex'])->name('index');
 Route::post('/index', [RegisterController::class, 'index']);
