@@ -114,24 +114,19 @@
   </section>
   <!-- End menu section -->
   <section id="aa-image-display-area">
-    @if (!empty($imageData))
-        <div>
-            <h2>Your Uploaded Images:</h2>
-            @foreach ($imageData as $image)
-                <div class="image-card">
-                    <img src="{{ asset($image['path']) }}" alt="{{ $image['title'] }}">
-                    <div class="image-details">
-                        <p>Title: <strong>{{ $image['title'] }}</strong></p>
-                        <p class="image-description">Description: {{ $image['description'] }}</p>
-                        <p class="image-time">Posted at: {{ $image['posted_at'] }}</p>
-                    </div>
-                </div>
-            @endforeach
+      @foreach ($images as $image) 
+        <div class="image-card">
+            <h3>{{ $image->title }}</h3>
+            <p>{{ $image->description }}</p>
+            <ul>
+                @foreach (($image->path) as $path)
+                    <li>{{ $path }}</li>
+                @endforeach
+            </ul>
+            <p>Created at: {{ $image->created_at }}</p>
         </div>
-    @else
-        <p>No images uploaded yet.</p>
-    @endif
-</section>
+      @endforeach
+  </section>
 
 
 <!-- jQuery library -->

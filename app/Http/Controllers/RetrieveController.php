@@ -5,28 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Image;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class RetrieveController extends Controller
 {
     public function dashboardretrieve()
     {
         // Retrieve images uploaded by the authenticated user
-        $user_id = Auth::id();
-        $images = Image::where('user_id', $user_id)->latest()->get();
+        
+        $images = Image::all(['title', 'description', 'path', 'created_at']);
 
-        $imageData = [];
-
-        foreach ($images as $image) {
-            $imageData[] = [
-                'path' => json_decode($image->path, true),
-                'title' => $image->title,
-                'description' => $image->description,
-                'posted_at' => $image->created_at->format('Y-m-d H:i:s'),
-            ];
-        }
-
-        dd($imageData);
-        return view('dashboard', ['imageData' => $imageData]);
+        Log::info($images);
+        return view('dashboard', compact('images'));
     }
 
     public function index()

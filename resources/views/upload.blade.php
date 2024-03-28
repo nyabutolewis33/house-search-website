@@ -22,27 +22,11 @@
     </div>
     <div>
         <label for="images">Upload Images:</label>
-        <input type="file" name="images[]" id="images" multiple onchange="updateImageList()">
-        <ul id="imageList"></ul>
+        <input type="file" name="images[]" id="images" multiple>
     </div>
     <button type="submit">Upload</button>
 </form>
 
-<script>
-    function updateImageList() {
-        var input = document.getElementById('images');
-        var ul = document.getElementById('imageList');
-        
-        for (var i = 0; i < input.files.length; i++) {
-            var li = document.createElement('li');
-            li.textContent = input.files[i].name;
-            ul.appendChild(li);
-        }
-    }
-    window.onload = function() {
-        updateImageList();
-    };
-</script>
 </body>
 </html>
 

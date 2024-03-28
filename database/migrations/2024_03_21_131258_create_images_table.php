@@ -19,7 +19,7 @@ class CreateImagesTable extends Migration
             $table->foreign('user_id')->references('id')->on('user_details')->onDelete('cascade');// Add foreign key constraint
             $table->string('title');
             $table->text('description');
-            $table->string('path'); // Store file path
+            $table->json('path'); // Store file path
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class UploadController extends Controller
         $request->validate([
             'title' => 'required|string',
             'description' => 'required|string',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:4096' // Adjust file validation rules as needed
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:102400' // Adjust file validation rules as needed
         ]);
 
         $user_id = Auth::id();
@@ -40,7 +40,7 @@ class UploadController extends Controller
             'user_id' => $user_id,
             'title' => $title,
             'description' => $description,
-            'path' => json_encode($imagePaths) // Store paths as JSON array or serialize as needed
+            'path' => ($imagePaths) // Store paths as JSON array or serialize as needed
         ]);
         return redirect()->back()->with('success', 'Images uploaded successfully.');
     }
