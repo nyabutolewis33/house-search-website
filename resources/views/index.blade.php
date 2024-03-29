@@ -220,7 +220,7 @@
                         @endforeach
                     </div>
                 @else
-                    <p>No images uploaded yet.</p>
+                    <p>No listings yet.</p>
                 @endif
             </div>
             
@@ -253,7 +253,7 @@
                     </div>
                     <div class="aa-single-service-content">
                       <h4><a href="#">Property Sale</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <p>
                     </div>
                   </div>
                 </div>
@@ -264,7 +264,7 @@
                     </div>
                     <div class="aa-single-service-content">
                       <h4><a href="#">Property Rent</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <p>
                     </div>
                   </div>
                 </div>
@@ -275,7 +275,7 @@
                     </div>
                     <div class="aa-single-service-content">
                       <h4><a href="#">Property Development</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <p>
                     </div>
                   </div>
                 </div>
@@ -286,7 +286,7 @@
                     </div>
                     <div class="aa-single-service-content">
                       <h4><a href="#">Market Analysis</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <p>
                     </div>
                   </div>
                 </div>
@@ -306,7 +306,7 @@
         <div class="col-md-12">
           <div class="aa-promo-banner-area">
             <h3>Find Your Best Property</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ex illum corporis quibusdam numquam quisquam optio explicabo. Officiis odit quia odio dignissimos eius repellat id!</p>
+            <p>
             <a href="#" class="aa-view-btn">View Details</a>
           </div>
         </div>
@@ -324,7 +324,7 @@
             <div class="aa-title">
               <h2>Our Agents</h2>
               <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+              <p>
             </div>
             <!-- agents content -->
             <div class="aa-agents-content">
@@ -483,20 +483,13 @@
             <div class="aa-title">
               <h2>What Client Say</h2>
               <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eaque quas debitis animi ipsum, veritatis!</p>
+              <p>
             </div>
             <!-- testimonial content -->
             <div class="aa-testimonial-content">
               <!-- testimonial slider -->
               <ul class="aa-testimonial-slider">
                 <li>
-                  <div class="aa-testimonial-single">
-                    <div class="aa-testimonial-img">
-                      <img src="{{("House_Hunting\House_hunting/Home_Property/img/testimonial-1.png")}}" alt="testimonial img">
-                    </div>
-                    <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                    </div>
                     <div class="aa-testimonial-bio">
                       <p>David Muller</p>
                       <span>Web Designer</span>

@@ -11,10 +11,6 @@ class Image extends Model
 
     protected $fillable = ['user_id', 'title', 'description', 'path'];
 
-    protected $casts = [
-        'path'=> 'array',
-    ];
-
     public function getTable()
     {
         return 'images';

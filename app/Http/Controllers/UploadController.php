@@ -25,23 +25,26 @@ class UploadController extends Controller
         $title = $request->title;
         $description = $request->description;
 
-
         $imagePaths = [];
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->storeAs('public/images', $imageName); // Store image in storage
+
+                // Save the image
+                $image->storeAs('public/images', $imageName);
+
                 $imagePaths[] = 'storage/images/' . $imageName;
             }
-            
         }
+
         Image::create([
             'user_id' => $user_id,
             'title' => $title,
             'description' => $description,
-            'path' => ($imagePaths) // Store paths as JSON array or serialize as needed
+            'path' => json_encode($imagePaths) // Convert array to JSON string
         ]);
+
         return redirect()->back()->with('success', 'Images uploaded successfully.');
     }
 }
