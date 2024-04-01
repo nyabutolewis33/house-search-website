@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Image;
 
 class RetrieveController extends Controller
 {
-    public function dashboardretrieve()
+    public function dashboard()
     {
-        // Retrieve images uploaded by the authenticated user
-        $images = Image::all(['title', 'description', 'path', 'created_at']);
+    // Retrieve the user's uploaded images using the relationship method
+        $images = Image::inRandomOrder()->get();
     
         // Pass the $images variable to the 'dashboard' view
-        return view('dashboard', compact('images'));
+        return view('dashboard', ['images' => $images]);
     }
     
     public function index()
@@ -21,19 +22,19 @@ class RetrieveController extends Controller
         // Retrieve all images in random order
         $images = Image::inRandomOrder()->get();
         
-        $imageData = [];
-
-        foreach ($images as $image) {
-            $imageData[] = [
-                'path' => $image->path,
-                'title' => $image->title,
-                'description' => $image->description,
-                'posted_at' => $image->created_at->format('Y-m-d H:i:s'),
-            ];
-        }
+        
 
         // dd($imageData); // Remove or comment out this line once you've confirmed $imageData is populated correctly
 
-        return view('index', ['imageData' => $imageData]);
+        return view('index', ['images' => $images]);
+    }
+
+    public function show($id)
+    {
+        // Retrieve the image details based on the provided ID
+        $image = Image::findOrFail($id);
+        
+        // Pass the image details to the view
+        return view('overlay', ['image' => $image]);
     }
 }

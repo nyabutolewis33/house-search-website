@@ -62,10 +62,10 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    1-900-523-3564
+                    +254-797-920-404
                   </div>
                   <div class="aa-email hidden-xs">
-                    <span class="fa fa-envelope-o"></span> info@markups.com
+                    <span class="fa fa-envelope-o"></span> info@housequest.com
                   </div>
                 </div>              
               </div>
@@ -96,30 +96,15 @@
           </button>
           <!-- LOGO -->                                               
           <!-- Text based logo -->
-          <a class="navbar-brand aa-logo" href="index"> Home <span>Property</span></a>
+          <a class="navbar-brand aa-logo" href="index"> House <span>Quest</span></a>
           <!-- Image based logo -->
           <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->                     
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-            <li><a href="index">HOME</a></li>
-             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="properties">PROPERTIES <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">                
-                <li><a href="properties">PROPERTIES</a></li>
-                <li><a href="properties-detail">PROPERTIES DETAIL</a></li>                                            
-              </ul>
-            </li>
-            <li><a href="gallery">GALLERY</a></li>                                        
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive">BLOG <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">                
-                <li><a href="blog-archive">BLOG</a></li>
-                <li><a href="blog-single">BLOG DETAILS</a></li>                                            
-              </ul>
-            </li>
+            <li class="active"><a href="index">HOME</a></li>
             <li class="active"><a href="contact">CONTACT</a></li>
-            <li><a href="404">404 PAGE</a></li>            
+            <li class="active"><a href="about">ABOUT US</a></li>           
           </ul>                          
         </div><!--/.nav-collapse -->       
       </div>          
@@ -129,21 +114,7 @@
 
   <!-- Start Proerty header  -->
 
-  <section id="aa-property-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-property-header-inner">
-            <h2>Contact</h2>
-            <ol class="breadcrumb">
-            <li><a href="#">HOME</a></li>            
-            <li class="active">Contact</li>
-          </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> 
+  
   <!-- End Proerty header  -->
 
  <section id="aa-contact">
@@ -153,46 +124,56 @@
           <div class="aa-contact-area">
             <div class="aa-contact-top">
               <div class="aa-contact-top-left">
-                <iframe width="100%" height="450" frameborder="0" allowfullscreen="" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6851.201919469417!2d-86.11773906635584!3d33.47324776828677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888bdb60cc49c571%3A0x40451ca6baf275c7!2s36008+AL-77%2C+Talladega%2C+AL+35160%2C+USA!5e0!3m2!1sbn!2sbd!4v1460452919256"></iframe>
+              <iframe width="100%" height="450" frameborder="0" allowfullscreen="" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15954.432315094433!2d36.82377772721029!3d-1.283316362087688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f182c1b5e6fd5%3A0x6e9101e8f0ffdd50!2sMoi%20Ave%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1649252732424"></iframe>
+
               </div>
               <div class="aa-contact-top-right">
                 <h2>Contact</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae placeat aspernatur aperiam, quisquam voluptas enim tempore ab itaque nam modi eos corrupti distinctio nobis labore dolorum quae tenetur. Sapiente, sequi.</p>
+                <p> Our offices and communication lines are open 24/7. Feel free to contact us anytime for any assistance.</p>
                 <ul class="contact-info-list">
-                  <li> <i class="fa fa-phone"></i> 1-700-564-6321</li>
-                  <li> <i class="fa fa-envelope-o"></i> info@homeproperty.com</li>
-                  <li> <i class="fa fa-map-marker"></i> 36008 AL-77, Talladega, AL 35160, USA</li>
+                  <li> <i class="fa fa-phone"></i> +254-797-920-404</li>
+                  <li> <i class="fa fa-envelope-o"></i> info@housequest.com</li>
+                  <li> <i class="fa fa-map-marker"></i> Moi Avenue Nairobi Kenya</li>
                 </ul>
               </div>
             </div>
             <div class="aa-contact-bottom">
               <div class="aa-title">
-                <h2>Send Your Message</h2>
+                <h2>We value your responses and will always review them</h2>
                 <span></span>
                 <p>Your email address will not be published. Required fields are marked <strong class="required">*</strong></p>
               </div>
               <div class="aa-contact-form">
-                <form class="contactform">                  
-                  <p class="comment-form-author">
-                    <label for="author">Name <span class="required">*</span></label>
-                    <input type="text" name="author" value="" size="30" required="required">
-                  </p>
-                  <p class="comment-form-email">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" name="email" value="" aria-required="true" required="required">
-                  </p>
-                  <p class="comment-form-url">
-                    <label for="subject">Subject</label>
-                    <input type="text" name="subject">  
-                  </p>
-                  <p class="comment-form-comment">
-                    <label for="comment">Message</label>
-                    <textarea name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
-                  </p>                
-                  <p class="form-submit">
-                    <input type="submit" name="submit" class="aa-browse-btn" value="Send Message">
-                  </p>        
-                </form>
+              <form class="contactform" method="POST" action="{{ route('contact.send') }}">  
+    @csrf                
+    <p class="comment-form-author">
+        <label for="author">Name <span class="required">*</span></label>
+        <input type="text" name="name" value="" size="30" required="required">
+    </p>
+    <p class="comment-form-email">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" name="email" value="" aria-required="true" required="required">
+    </p>
+    <p class="comment-form-url">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject">  
+    </p>
+    <p class="comment-form-comment">
+        <label for="comment">Message</label>
+        <textarea name="message" cols="45" rows="8" aria-required="true" required="required"></textarea>
+    </p>                
+    <p class="form-submit">
+        <input type="submit" name="submit" class="aa-browse-btn" value="Send Message">
+    </p>        
+
+    <!-- Success message display -->
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+</form>
+
               </div>
             </div>
           </div>
@@ -211,7 +192,7 @@
           <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="aa-footer-left">
-               <p>Designed by <a rel="nofollow" href="http://www.markups.io/">MarkUps.io</a></p>
+               <p>Designed by <a rel="nofollow" href="http://www.markups.io/">Nyabuto and Victor</a></p>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">

@@ -68,6 +68,14 @@ Route::post('/upload', [UploadController::class, 'store'])->name('upload.store')
 
 // Route  for displaying retrieved images on the dashboard
 
-Route::get('/dashboard', [RetrieveController::class, 'dashboardretrieve'])->name('dashboard');
+Route::get('/dashboard', [RetrieveController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/', [RetrieveController::class, 'index'])->name('home');
+Route::get('/index', [RetrieveController::class, 'index'])->name('home');
+
+// Define a route for displaying image details
+Route::get('/image/{id}', [RetrieveController::class, 'show'])->name('image.show');
+
+// define a route for uploading the messages
+Route::get('/contact', [UploadController::class, 'send'])->name('contact');
+Route::post('/contact', [UploadController::class, 'message'])->name('contact.send');

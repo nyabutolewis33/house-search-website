@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>Home Property | 404</title>
-
+    <title>{{ $image->title }}</title>
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset("House_Hunting\House_hunting/Home_Property/img/favicon.ico")}}" type="image/x-icon">
     
@@ -22,13 +22,16 @@
     <!-- Theme color -->
     <link id="switcher" href="{{ asset("House_Hunting\House_hunting/Home_Property/css/theme-color/default-theme.css")}}" rel="stylesheet">     
 
+    <link href="{{ asset("House_Hunting\House_hunting/Home_Property/css/style.css")}}" rel="stylesheet">
     <!-- Main style sheet -->
-    <link href="{{ asset("House_Hunting\House_hunting/Home_Property/css/style.css")}}" rel="stylesheet">       
+    <link href="{{ asset("House_Hunting\House_hunting/Home_Property/css/theme-color/dashboard.css")}}" rel="stylesheet">     
 
    
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>    
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,10 +40,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  
 
   </head>
-  <body>
+  <body class="aa-price-range">  
   <!-- Pre Loader -->
   <div id="aa-preloader-area">
     <div class="pulse"></div>
@@ -48,7 +50,6 @@
   <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
-
 
   <!-- Start header section -->
   <header id="aa-header">  
@@ -61,10 +62,10 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    1-900-523-3564
+                    +254 - 797 - 920 - 404
                   </div>
                   <div class="aa-email hidden-xs">
-                    <span class="fa fa-envelope-o"></span> info@markups.com
+                    <span class="fa fa-envelope-o"></span> info@housequest.com
                   </div>
                 </div>              
               </div>
@@ -81,6 +82,7 @@
     </div>
   </header>
   <!-- End header section -->
+
   <!-- Start menu section -->
   <section id="aa-menu-area">
     <nav class="navbar navbar-default main-navbar" role="navigation">  
@@ -95,77 +97,99 @@
           </button>
           <!-- LOGO -->                                               
           <!-- Text based logo -->
-          <a class="navbar-brand aa-logo" href="index"> Home <span>Property</span></a>
-          <!-- Image based logo -->
-          <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->                     
+           <a class="navbar-brand aa-logo" href="index.blade.php"> House <span>Quest</span></a>
+           <!-- Image based logo -->
+           <!--<a class="navbar-brand aa-logo-img" href="index.blade.php"><img src="{{("House_Hunting\House_hunting/Home_Property/img/logo.png")}}" alt="logo"></a>-->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-            <li><a href="index">HOME</a></li>
-             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="properties">PROPERTIES <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">                
-                <li><a href="properties">PROPERTIES</a></li>
-                <li><a href="properties-detail">PROPERTIES DETAIL</a></li>                                            
-              </ul>
-            </li>
-            <li><a href="gallery">GALLERY</a></li>                                         
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive">BLOG <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">                
-                <li><a href="blog-archive">BLOG</a></li>
-                <li><a href="blog-single">BLOG DETAILS</a></li>                                            
-              </ul>
-            </li>
-            <li><a href="contact">CONTACT</a></li>
-            <li class="active"><a href="#">404 PAGE</a></li>
-            <!-- <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">PAGES <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">                
-                <li><a href="properties-detail.html">PRODUCT DETAILS</a></li>
-                <li><a href="blog-single.html">BLOG DETAILS</a></li>                
-                <li class="active"><a href="404.html">404 PAGE</a></li>                
-              </ul>
-            </li> -->
-          </ul>                          
+            <li class="active"><a href="index">HOME</a></li>
+            <li class="active"><a href="contact">CONTACT</a></li>
+            <li class="active"><a href="about">ABOUT US</a></li>
+          </ul>                            
         </div><!--/.nav-collapse -->       
       </div>          
     </nav> 
   </section>
   <!-- End menu section -->
 
-  <!-- Start Proerty header  -->
-  <section id="aa-property-header">
+  <!-- Advance Search -->
+  <section id="aa-advance-search">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-property-header-inner">
-            <h2>404 Error</h2>
-            <ol class="breadcrumb">
-            <li><a href="#">HOME</a></li>            
-            <li class="active">404</li>
-          </ol>
-          </div>
+      <div class="aa-advance-search-area">
+        <div class="form">
+         <div class="aa-advance-search-top">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="aa-single-advance-search">
+                  <input type="text" placeholder="Type Your Location">
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="aa-single-advance-search">
+                  <select>
+                   <option value="0" selected>Category</option>
+                    <option value="1">Flat</option>
+                    <option value="3">Plot</option>
+                    <option value="4">Commercial</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2">
+                 <div class="aa-single-advance-search">
+                  <select>
+                    <option value="0" selected>Type</option>
+                    <option value="1">Single Room</option>
+                    <option value="2">Bedsitter</option>
+                    <option value="3">1 Bedroom</option>
+                    <option value="4">2 Bedroom</option>
+                  </select>
+              </div>
+              </div>
+              <div class="col-md-2">
+                <div class="aa-single-advance-search text-right ">
+                  <input class="aa-search-btn" type="submit" value="Search">
+                </div>
+              </div>
+            </div>
+          
+         </div>
         </div>
       </div>
     </div>
-  </section> 
-  <!-- End Proerty header  -->
-  <section id="aa-error">
-    <div class="container">
-      <row>
-        <div class="col-md-12">
-          <div class="aa-error-area">
-            <h2>404</h2>
-            <p><span class="fa fa-warning"></span>Oops! The Page you requested was not found!</p>
-            <a href="#">Back Home</a>
-          </div>
+  </section>
+  <!-- / Advance Search -->
+
+  <!-- Start slider  -->
+  <section id="aa-slider">
+    <div class="aa-slider-area"> 
+     <h1>{{ $image->title }}</h1>
+      <!-- Top slider -->
+      <div class="aa-top-slider">
+            @foreach ($image->path as $path)
+                <div class="swiper-slide">
+                    <img src="{{ asset($path) }}" alt="{{ $image->title }}">
+                </div>
+            @endforeach
+        <!-- Top slider single slide -->
+        <div class="aa-top-slider-single">  
+          
         </div>
-      </row>
+      </div>
     </div>
   </section>
+  <!-- End slider  -->
 
+  <p class="image-time">Posted at: {{ $image->created_at }}</p>
 
+  <!-- Latest property -->
+  <section id="aa-image-display">
+    <div><p class="image-description">{!! nl2br(e($image->description)) !!}</p></div>
+            
+  </section>
+  <!-- / Latest property -->
+
+  
   <!-- Footer -->
   <footer id="aa-footer">
     <div class="container">
@@ -203,7 +227,7 @@
   </footer>
   <!-- / Footer -->
 
-   <!-- jQuery library -->
+  <!-- jQuery library -->
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   <script src="{{asset("House_Hunting\House_hunting/Home_property/js/jquery.min.js")}}"></script>   
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -218,6 +242,10 @@
   <script type="text/javascript" src="{{asset("House_Hunting\House_hunting/Home_property/js/jquery.fancybox.pack.js")}}"></script>
   <!-- Custom js -->
   <script src="{{asset("House_Hunting\House_hunting/Home_property/js/custom.js")}}"></script> 
+
+  <script type="text/javascript" src="{{asset("House_Hunting\House_hunting/Home_property/js/style.js")}}"></script> 
   
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   </body>
 </html>

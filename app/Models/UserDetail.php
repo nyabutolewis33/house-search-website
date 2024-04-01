@@ -9,7 +9,7 @@ use Illuminate\Auth\Authenticatable;
 
 class UserDetail extends Model implements AuthenticatableContract
 {
-    use Authenticatable;
+    use Authenticatable, HasFactory;
 
     protected $table = 'user_details';
 
@@ -21,5 +21,9 @@ class UserDetail extends Model implements AuthenticatableContract
     ];
 
     // You can define relationships with other models here if needed
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
     
 }

@@ -43,6 +43,9 @@
   
     </head>
 <body class="aa-price-range">
+  <!-- SCROLL TOP BUTTON -->
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
 <header id="aa-header">  
     <div class="container">
       <div class="row">
@@ -53,7 +56,7 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    +254 - 797 - 920 - 404
+                    +254-797-920-404
                   </div>
                   <div class="aa-email hidden-xs">
                     <span class="fa fa-envelope-o"></span> info@housequest.com
@@ -63,6 +66,8 @@
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-right">
                   <a href="index" class="aa-register">Home</a>
+                  <a href="contact" class="aa-register">Contact</a>
+                  <a href="about" class="aa-register">About Us</a>
                   <!--<a href="signin" class="aa-login">Login</a> -->
                 </div>
               </div>
@@ -113,31 +118,42 @@
     </nav> 
   </section>
   <!-- End menu section -->
-  <section id="aa-image-display-area">
-  <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-              @if (!empty($imageData))
-              <div>
-                  <h2>Your Uploaded Images:</h2>
-                  @foreach ($imageData as $image)
-                      <div class="image-card">
-                          <img src="{{ asset($image['path']) }}" alt="{{ $image['title'] }}">
-                          <div class="image-details">
-                              <p>Title: <strong>{{ $image['title'] }}</strong></p>
-                              <p class="image-description">Description: {{ $image['description'] }}</p>
-                              <p class="image-time">Posted at: {{ $image['posted_at'] }}</p>
-                          </div>
-                      </div>
-                  @endforeach
-              </div>
-          @else
-              <p>No listings yet.</p>
-          @endif
-          
-
-            </div>
+  <section id="aa-latest-property">
+    <div class="container">
+      <div class="aa-latest-property-area">
+        <div class="aa-title">
+          <h2>Latest Properties</h2>
+          <span></span>         
         </div>
+        <div class="aa-latest-properties-content">
+          <div class="row">
+            <div class="image-container">
+                @if (!empty($images))
+                    <div>
+                        <h2>Your Uploaded Images:</h2>
+                        @foreach ($images as $image) 
+                            <div class="image-card">
+                                <a href="{{ route('image.show', ['id' => $image->id]) }}">
+                                    <img src="{{ asset($image->thumbnail) }}" alt="{{ $image->title }}">
+                                </a>
+                                <div class="image-info">
+                                    <a href="{{ route('image.show', ['id' => $image->id]) }}">
+                                        <h3>{{ $image->title }}</h3>
+                                    </a>
+                                </div>
+                                <p class="image-time">Created at: {{ $image->created_at }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    <p>No listings yet.</p>
+                @endif
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

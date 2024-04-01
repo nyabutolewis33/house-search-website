@@ -40,7 +40,44 @@
   
 
   </head>
-  <body>
+  <body class="aa-price-range">
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
+  <header id="aa-header">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-header-area">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="aa-header-left">
+                  <div class="aa-telephone-no">
+                    <span class="fa fa-phone"></span>
+                    +254 - 797 - 920 - 404
+                  </div>
+                  <div class="aa-email hidden-xs">
+                    <span class="fa fa-envelope-o"></span> info@housequest.com
+                  </div>
+                </div>              
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="aa-header-right">
+                  <a href="index" class="aa-register">Home</a>
+                  <a href="contact" class="aa-register">Contact</a>
+                  <a href="about" class="aa-register">About Us</a>
+                  <!--<a href="signin" class="aa-login">Login</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  @if(session('status'))
+        <div class="alert alert-success">{{ session('status') }}</div>
+    @endif
   <section id="aa-signin">
     <div class="container">
       <div class="row">
@@ -57,7 +94,7 @@
                   <input type="email" required="required" aria-required="true" value="" name="email">
 
                   @error('email')
-                  <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                  <p class="text-red-500 text-xs mt-1" color="red">{{$message}}</p>
                   @enderror
                 </div>
                 <div class="aa-single-field">
