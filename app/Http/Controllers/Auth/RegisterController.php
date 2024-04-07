@@ -25,7 +25,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:user_details',
             'national_id_number' => 'required|string|max:255|unique:user_details',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8|confirmed:password_confirmation',
         ]);  
         
         // Hash password
@@ -36,7 +36,7 @@ class RegisterController extends Controller
         
         // You can perform additional actions after user registration if needed
 
-        return redirect()->route('signin')->with('status', 'Registration successful. You can now login.');
+        return redirect()->route('signin')->with('success', 'Registration successful. You can now login.');
     
     }
 

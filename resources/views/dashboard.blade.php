@@ -109,7 +109,7 @@
                     <ul class="dropdown-menu" style="background-color: #007bff;">
                         <li><a href="#" style="background-color: #007bff;">{{ $userEmail }}</a></li> <!-- Display user's email -->
                         <li role="separator" class="divider"></li>
-                        <li><a href="#" style="background-color: #007bff;">Logout</a></li> <!-- Logout option -->
+                        <li><a href="signin" style="background-color: #007bff;">Logout</a></li> <!-- Logout option -->
                     </ul>
                 </li>
             </ul>
@@ -122,32 +122,13 @@
     <div class="container">
       <div class="aa-latest-property-area">
         <div class="aa-title">
-          <h2>Latest Properties</h2>
+          <h2>       </h2>
           <span></span>         
         </div>
         <div class="aa-latest-properties-content">
           <div class="row">
             <div class="image-container">
-                @if (!empty($images))
-                    <div>
-                        <h2>Your Uploaded Images:</h2>
-                        @foreach ($images as $image) 
-                            <div class="image-card">
-                                <a href="{{ route('image.show', ['id' => $image->id]) }}">
-                                    <img src="{{ asset($image->thumbnail) }}" alt="{{ $image->title }}">
-                                </a>
-                                <div class="image-info">
-                                    <a href="{{ route('image.show', ['id' => $image->id]) }}">
-                                        <h3>{{ $image->title }}</h3>
-                                    </a>
-                                </div>
-                                <p class="image-time">Created at: {{ $image->created_at }}</p>
-                            </div>
-                        @endforeach
-                    </div>
-                @else
-                    <p>No listings yet.</p>
-                @endif
+                
             </div>
             
             
@@ -156,6 +137,29 @@
       </div>
     </div>
   </section>
+
+  <table class="image-table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="{{asset("storage/images/1711802776_pexels-sevenstorm-juhaszimrus-439391.jpg") }}" alt="Image 1"></td>
+      <td>Bedsitter in Ruiru Kimbo KSH 7000/month</td>
+      <td><button>DELETE</button></td>
+    </tr>
+    <tr>
+      <td><img src="{{asset("storage/images/1712006090_pexels-jovydas-dobilas-2462015.jpg") }}" alt="Image 2"></td>
+      <td>One Bedroom Apartments/Flats for rent in Thika</td>
+      <td><button>DELETE</button></td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </tbody>
+</table>
 
 
 <!-- jQuery library -->

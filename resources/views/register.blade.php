@@ -54,7 +54,7 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    +254 - 797 - 920 - 404
+                    +254-797-920-404
                   </div>
                   <div class="aa-email hidden-xs">
                     <span class="fa fa-envelope-o"></span> info@housequest.com
@@ -91,7 +91,7 @@
                   <input type="text" required="required" aria-required="true" value="" name="name">
 
                   @error('name')
-                  <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                  <p class="text-red-500 text-xs mt-1">Field can not be empty</p>
                   @enderror
                 </div>
                 <div class="aa-single-field">
@@ -99,7 +99,7 @@
                   <input type="email" required="required" aria-required="true" value="" name="email">
 
                   @error('email')
-                  <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                  <p class="text-red-500 text-xs mt-1">Invalid Email Address</p>
                   @enderror
                 </div>
                 <div class="aa-single-field">
@@ -107,7 +107,7 @@
                   <input type="text" required="required" aria-required="true" value="" name="national_id_number">
 
                   @error('national_id_number')
-                  <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                  <p class="text-red-500 text-xs mt-1"></p>
                   @enderror
                 </div>
                 <div class="aa-single-field">
@@ -115,7 +115,7 @@
                   <input type="password" name="password"> 
 
                   @error('password')
-                  <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                  <p class="text-red-500 text-xs mt-1">password does not match</p>
                   @enderror
                 </div>
                 <div class="aa-single-field">
@@ -123,8 +123,19 @@
                   <input type="password" name="password_confirmation"> 
 
                   @error('password_confirmation')
-                  <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                  <p class="text-red-500 text-xs mt-1">password does not match</p>
                   @enderror
+                </div>
+                <div class="aa-single-field">
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="confirmation" name="confirmation" required> I certify that I am the legal owner of the property and that the provided details are accurate and verifiable.<br>
+                    </div>
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="confirmation" name="confirmation" required> I confirm that any house(s) I upload to this platform belong to me and not to anyone else.
+                    </div>
+                    @error('confirmation')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror
                 </div>
                 <div class="aa-single-submit">
                   <input type="submit" value="Create Account" name="submit"> 
@@ -142,7 +153,22 @@
     </div>
   </section> 
 
+  <script>
+  $(document).ready(function(){
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 100) {
+        $('.scrollToTop').fadeIn();
+      } else {
+        $('.scrollToTop').fadeOut();
+      }
+    });
 
+    $('.scrollToTop').click(function(){
+      $("html, body").animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+  });
+</script>
    <!-- jQuery library -->
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   <script src="{{asset("House_Hunting\House_hunting/Home_property/js/jquery.min.js")}}"></script>   

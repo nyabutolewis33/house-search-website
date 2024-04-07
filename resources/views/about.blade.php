@@ -118,6 +118,7 @@
             <div class="aa-title">
               <h2>Our Service</h2>
               <span></span>
+              <p>We offer a platform where homeowners can showcase their properties for sale or rent, while prospective tenants or buyers can easily find their desired accommodations.</p>
               <p>The system has been developed to offer the following services</p>
             </div>
             <!-- service content -->
@@ -130,7 +131,7 @@
                     </div>
                     <div class="aa-single-service-content">
                       <h4><a href="#">Property Sale</a></h4>
-                      <p>To buy a property select from the available prperty that have been uploaded by property owners and contact them directly</p>
+                      <p>To purchase a property, browse through the listed properties uploaded by homeowners, and directly contact them to inquire or make arrangements.</p>
                     </div>
                   </div>
                 </div>
@@ -141,7 +142,7 @@
                     </div>
                     <div class="aa-single-service-content">
                       <h4><a href="#">Property Rent</a></h4>
-                      <p>To rent a property select from the available prperty that have been uploaded by property owners and contact them directly</p>
+                      <p>To rent a property, browse through the listed properties uploaded by homeowners, and directly contact them to inquire or make arrangements.</p>
                     </div>
                   </div>
                 </div>
@@ -226,11 +227,11 @@
                       <img src="{{("House_Hunting\House_hunting/Home_Property/img/testimonial-2.png")}}" alt="testimonial img">
                     </div>
                     <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
+                      <p></p>
                     </div>
                     <div class="aa-testimonial-bio">
-                      <p>David Muller</p>
-                      <span>Web Designer</span>
+                      <p></p>
+                      <span></span>
                     </div>
                   </div>
                 </li>

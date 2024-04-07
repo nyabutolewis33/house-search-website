@@ -637,7 +637,7 @@ img {
   float: left;
   width: 100%;
   padding: 100px 0;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 #aa-latest-property .aa-latest-property-area {
   display: inline;
@@ -2324,7 +2324,7 @@ img {
   bottom: 0;
   height: 100%;
   left: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 30px;
   width: 100%;
@@ -2353,18 +2353,18 @@ img {
   height: 90vh;
 }
 #aa-signin .col-md-12 .aa-logo-container{
-  margin-right: 20px;
+  margin-right: 30px;
 }
 #aa-signin .col-md-12 .aa-logo-container img{
   height: 70px;
   width: 70px;
   position: absolute; /* Position the logo absolutely */
-  top: 30%;
+  top: 50%;
   left: 75%;
 }
 #aa-signin .col-md-12 .aa-logo-container .aa-logo{
   position: absolute; /* Position the logo absolutely */
-  top: 50%; /* Position the logo at the vertical center of its container */
+  top: 70%; /* Position the logo at the vertical center of its container */
   left: 80%; /* Position the logo at the horizontal center of its container */
   transform: translate(-50%, -50%);
   border: 2px solid #000;
@@ -2396,11 +2396,10 @@ img {
   border: 1px solid #000;
   float: left;
   width: 500px;
-  height: 580px;
+  height: 720px;
   margin-right: 200px;
   position: absolute; 
-  top: 1%; 
-  bottom: 20%;
+  top: 5%; 
 }
 #aa-signin .aa-signin-area .aa-signin-form .aa-signin-form-title {
   display: inline;
@@ -2429,7 +2428,7 @@ img {
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
-  margin-top: -2%;
+  margin-top: -7%;
 }
 #aa-signin .aa-signin-area .aa-signin-form .aa-single-field {
   display: inline;
@@ -2489,6 +2488,10 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+#aa-signin .aa-signin-area .aa-signup-form .text-red-500 {
+  color: red;
+  font-size: 11px;
+}
 #aa-signin .aa-signin-area .aa-signin-form .aa-single-field label input [type="checkbox"] {
   margin-left: 10px;
 }
@@ -2532,6 +2535,12 @@ img {
   text-align: center;
   width: 100%;
 }
+.checkbox-container {
+  margin-bottom: 10px;
+  
+}
+
+
 #aa-signin .aa-signin-area .aa-signin-form .aa-single-submit input[type="submit"] {
   color: #fff;
   font-size: 16px;

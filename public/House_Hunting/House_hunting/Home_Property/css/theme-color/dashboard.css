@@ -5,6 +5,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-top: 60px;
 }
 
 /* Style for labels */
@@ -55,11 +56,14 @@ button[type="submit"]:hover {
   background-color: rgb(128, 241, 128);
   color: black;
   height: 30px;
-  width: 200px;
-  font-size: 15px;
+  width: 400px;
+  font-size: 20px;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
 }
 #aa-image-display-area .image-card {
   border: 1px solid #ccc;
@@ -156,13 +160,14 @@ button[type="submit"]:hover {
   padding: 20px;
   border-radius: 5px;
   max-width: 80%; /* Limit the width of the details container */
+  max-height: 400px;
 }
 
 /* Style for the image within the details container */
 .image-details-overlay img {
   display: block;
   max-width: 100%; /* Ensure the image fits within the container */
-  height: auto; /* Maintain aspect ratio */
+  max-height: fit-content; /* Maintain aspect ratio */
   margin: 0 auto 20px; /* Add some bottom margin for spacing */
 }
 
@@ -207,4 +212,35 @@ button[type="submit"]:hover {
   margin-left: 30px;
   font-style: italic;
   font-weight: bold;
+}
+
+.image-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: 30px;
+}
+
+.image-table th,
+.image-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.image-table img {
+  max-height: 80px; /* Set maximum height for images */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Optional: Style for buttons */
+.image-table button {
+  padding: 6px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.image-table button:hover {
+  background-color: #0056b3;
 }

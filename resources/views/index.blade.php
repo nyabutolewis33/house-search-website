@@ -171,7 +171,7 @@
             <div class="image-container">
                 @if (!empty($images))
                     <div>
-                        <h2>Your Uploaded Images:</h2>
+                        <h2>   </h2>
                         @foreach ($images as $image) 
                             <div class="image-card">
                                 <a href="{{ route('image.show', ['id' => $image->id]) }}">
@@ -182,7 +182,7 @@
                                         <h3>{{ $image->title }}</h3>
                                     </a>
                                 </div>
-                                <p class="image-time">Created at: {{ $image->created_at }}</p>
+                                <p class="image-time">posted at: {{ $image->created_at }}</p>
                             </div>
                         @endforeach
                     </div>

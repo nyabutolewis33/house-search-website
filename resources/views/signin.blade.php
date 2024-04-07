@@ -54,7 +54,7 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    +254 - 797 - 920 - 404
+                    +254-797-920-404
                   </div>
                   <div class="aa-email hidden-xs">
                     <span class="fa fa-envelope-o"></span> info@housequest.com
@@ -75,7 +75,7 @@
       </div>
     </div>
   </header>
-  @if(session('status'))
+  @if(session('success'))
         <div class="alert alert-success">{{ session('status') }}</div>
     @endif
   <section id="aa-signin">
@@ -110,6 +110,7 @@
                   <input type="checkbox"> Remember me
                 </label>                                                          
                 </div> 
+                <a href="#">Forgot Password?</a>
                 <div class="aa-single-submit">
                   <input type="submit" value="Signin" class="aa-browse-btn" name="submit">  
                   <p>Don't Have A Account Yet? <a href="register">CREATE NOW!</a></p>
