@@ -114,49 +114,77 @@
   <!-- Advance Search -->
   <section id="aa-advance-search">
     <div class="container">
-      <div class="aa-advance-search-area">
-        <div class="form">
-         <div class="aa-advance-search-top">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Type Your Location">
+        <div class="aa-advance-search-area">
+            <div class="form">
+                <div class="aa-advance-search-top">
+                    <form action="{{ route('search') }}" method="GET">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="aa-single-advance-search">
+                                    <input type="text" name="location" placeholder="Type Your Location">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="aa-single-advance-search">
+                                    <select name="category">
+                                        <option value="0" selected>Category</option>
+                                        <option value="1">One Bedroom</option>
+                                        <option value="2">Two Bedroom</option>
+                                        <option value="3">Single Room</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="aa-single-advance-search">
+                                    <select name="price">
+                                        <option value="0" selected>Price</option>
+                                        <option value="1">2000-3000</option>
+                                        <option value="2">3500-4000</option>
+                                        <option value="3">4500-6000</option>
+                                        <option value="4">6500-10000</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="aa-single-advance-search text-right">
+                                    <button type="submit" class="aa-search-btn">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-              </div>
-              <div class="col-md-2">
-                <div class="aa-single-advance-search">
-                  <select>
-                   <option value="0" selected>Category</option>
-                    <option value="1">Flat</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-2">
-                 <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Single Room</option>
-                    <option value="2">Bedsitter</option>
-                    <option value="3">1 Bedroom</option>
-                    <option value="4">2 Bedroom</option>
-                  </select>
-              </div>
-              </div>
-              <div class="col-md-2">
-                <div class="aa-single-advance-search text-right ">
-                  <input class="aa-search-btn" type="submit" value="Search">
-                </div>
-              </div>
             </div>
-          
-         </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
+
+@if($results->count() > 0)
+<section id="search-results">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Search Results</h2>
+                <div class="search-results-list">
+                    @foreach ($results as $result)
+                    <div class="search-result-item">
+                        <div>{{ $result->title }}</div>
+                        <div>{{ $result->description }}</div>
+                        <!-- Display other image details as needed -->
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endif
+
   <!-- / Advance Search -->
+  @if($results->count() > 0)
+  <section id="search-results">
+      <!-- Your search results display code here -->
+  </section>
+  @endif
 
   <!-- Latest property -->
   <section id="aa-image-display-area">

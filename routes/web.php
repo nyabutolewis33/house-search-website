@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\RetrieveController;
+use App\Http\Controllers\SearchController;
 
 
 /*
@@ -79,3 +80,4 @@ Route::get('/image/{id}', [RetrieveController::class, 'show'])->name('image.show
 // define a route for uploading the messages
 Route::get('/contact', [UploadController::class, 'send'])->name('contact');
 Route::post('/contact', [UploadController::class, 'message'])->name('contact.send');
+Route::get('/search', [SearchController::class, 'search'])->name('search');
